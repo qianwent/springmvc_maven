@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
+            <!--this is necessary in maven project, otherwise, even @Override won't compile-->
+            <!--https://stackoverflow.com/questions/24260688/intellij-override-warnings-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

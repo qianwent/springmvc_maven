@@ -19,7 +19,7 @@ public class AppInitializer implements WebApplicationInitializer {
     Logger logger = LoggerFactory.getLogger(AppInitializer.class);
 
     private static final String CONFIG_LOCATION = "com.qwt.springmaven.config";
-    private static final String MAPPING_URL = "/springmvc/*";
+    private static final String MAPPING_URL = "/test/*";
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
@@ -33,6 +33,14 @@ public class AppInitializer implements WebApplicationInitializer {
         // Register and map the dispatcher servlet
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", new DispatcherServlet(context));
         dispatcher.setLoadOnStartup(1);
+        //https://docs.spring.io/spring/docs/3.1.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html
+        /*
+        same as the following in web.xml, though we are not using xml now because of this class
+        <servlet-mapping>
+           <servlet-name>dispatcher</servlet-name>
+           <url-pattern>/</url-pattern>
+         </servlet-mapping>
+         */
         dispatcher.addMapping(MAPPING_URL);
         logger.debug("exiting AppInitializer.onStartup()");
     }
