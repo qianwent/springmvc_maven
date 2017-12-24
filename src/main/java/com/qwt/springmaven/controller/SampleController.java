@@ -18,9 +18,9 @@ public class SampleController {
         return "This is sample content.";
     }
 
-    @RequestMapping(value = "/helloagain", method = RequestMethod.GET)
+    @RequestMapping(value = "/helloworld", method = RequestMethod.GET)
     public String sayHelloAgain(ModelMap model) {
-        model.addAttribute("greeting", "Hello World Again, from Spring 4 MVC");
+        model.addAttribute("greeting", "Hello World, from Spring 4 MVC");
         return "index";//this finally map to index.jsp
     }
 
