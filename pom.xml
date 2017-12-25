@@ -7,6 +7,17 @@
     <groupId>groupId</groupId>
     <artifactId>springmvc_maven</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description>skeleton project</description>
+
+    <properties>
+        <spring.version>4.3.9.RELEASE</spring.version>
+        <spring.security.version>5.0.0.RELEASE</spring.security.version>
+        <javax.version>3.0.1</javax.version>
+        <jstl.version>1.2</jstl.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <mysql.connector.version>5.1.39</mysql.connector.version>
+    </properties>
+
     <build>
         <plugins>
             <!--this is necessary in maven project, otherwise, even @Override won't compile-->
@@ -27,35 +38,42 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.3.9.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>4.3.9.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>5.0.0.RELEASE</version>
+            <version>${spring.security.version}</version>
         </dependency>
         <!-- Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>${javax.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <version>${jstl.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- connect to mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
         </dependency>
     </dependencies>
 
