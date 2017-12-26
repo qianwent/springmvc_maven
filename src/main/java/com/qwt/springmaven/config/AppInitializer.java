@@ -24,6 +24,7 @@ public class AppInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         logger.debug("entering AppInitializer.onStartup()");
+        System.out.println("entering AppInitializer.onStartup()");
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         context.setConfigLocation(CONFIG_LOCATION);
 
