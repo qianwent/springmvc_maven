@@ -2,6 +2,7 @@ package com.qwt.springmaven.security.filter;
 
 import com.qwt.springmaven.common.model.Principal;
 import com.qwt.springmaven.common.util.PrincipalUtil;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -81,6 +82,7 @@ public class PrincipalFilter implements Filter {
 		//TODO: need to get roles from DB
 		List<String> groups = Arrays.asList("ROLE_ADMIN", "ROLE_USER");
 		logger.debug("Found " + groups.size() + " roles, " + groups);
+		System.out.println("Found " + groups.size() + " roles, " + groups);
 		return groups;
 	}
 
@@ -100,7 +102,7 @@ public class PrincipalFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig filterConfig) throws ServletException {
-//		userIdHeader = StringUtils.defaultIfEmpty(filterConfig.getInitParameter(USER_ID_HEADER_PARAM), USER_ID_HEADER_DEFAULT);
+		userIdHeader = StringUtils.defaultIfEmpty(filterConfig.getInitParameter(USER_ID_HEADER_PARAM), USER_ID_HEADER_DEFAULT);
 	}
 
 }

@@ -36,7 +36,7 @@ public class UserDetailsAdapter implements UserDetails {
 			synchronized(Object.class) {
 				if(authorities == null) {
 					List<String> groups = principal.getGroups();
-					authorities = new ArrayList<GrantedAuthority>(groups.size());
+					authorities = new ArrayList<>(groups.size());
 
 					/*for(String g : groups){
 						authorities.add(new SimpleGrantedAuthority(g));
@@ -61,17 +61,17 @@ public class UserDetailsAdapter implements UserDetails {
 
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean isEnabled() {
