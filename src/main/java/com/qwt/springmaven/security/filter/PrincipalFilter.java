@@ -2,7 +2,6 @@ package com.qwt.springmaven.security.filter;
 
 import com.qwt.springmaven.common.model.Principal;
 import com.qwt.springmaven.common.util.PrincipalUtil;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -101,7 +100,7 @@ public class PrincipalFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig filterConfig) throws ServletException {
-		userIdHeader = StringUtils.defaultIfEmpty(filterConfig.getInitParameter(USER_ID_HEADER_PARAM), USER_ID_HEADER_DEFAULT);
+//		userIdHeader = StringUtils.defaultIfEmpty(filterConfig.getInitParameter(USER_ID_HEADER_PARAM), USER_ID_HEADER_DEFAULT);
 	}
 
 }

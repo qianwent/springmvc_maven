@@ -55,11 +55,6 @@ public class UserDetailsAdapter implements UserDetails {
 		return "";
 	}
 
-	@Override
-	public String getName() {
-		return null;
-	}
-
 	public String getUsername() {
 		return principal.getUserId();
 	}
