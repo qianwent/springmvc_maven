@@ -17,7 +17,7 @@ import java.util.List;
  * to create an instance of Principal, which is then exposed to the rest of the 
  * application via PrincipalUtil.
  * 
- * @author jfreitag
+ * @author Wentao
  *
  */
 public class PrincipalFilter implements Filter {
@@ -58,6 +58,7 @@ public class PrincipalFilter implements Filter {
 
 		p = new Principal();
 		// populate principal
+		//TODO: need to switch to different auth, right now is basic auth
 		p.setUserId(getUserId(req));
 
 		// TODO: Get roles from DB logic is not ready yet

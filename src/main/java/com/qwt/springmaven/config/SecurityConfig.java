@@ -31,20 +31,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
 
-//    @Autowired
-//    @Qualifier("dataSource")
-//    DataSource dataSource;
-
-//    @Autowired
-//    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-//
-//        auth.jdbcAuthentication().dataSource(dataSource)
-//                .usersByUsernameQuery(
-//                        "select username,password, enabled from users where username = ?")
-//                .authoritiesByUsernameQuery(
-//                        "select username, role from user_roles where username = ?");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
