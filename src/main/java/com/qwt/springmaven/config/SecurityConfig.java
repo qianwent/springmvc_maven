@@ -58,36 +58,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return principalFilter;
     }
 
-    /*@Bean
-    public PreAuthenticatedAuthenticationProvider preauthAuthProvider() {
-        logger.debug("Calling SecurityConfig.preauthAuthProvider()");
-        PreAuthenticatedAuthenticationProvider preauthAuthProvider = new PreAuthenticatedAuthenticationProvider();
-        preauthAuthProvider.setPreAuthenticatedUserDetailsService(userDetailsServiceWrapper());
-        return preauthAuthProvider;
-    }
-
-    @Bean
-    public UserDetailsByNameServiceWrapper<PreAuthenticatedAuthenticationToken> userDetailsServiceWrapper() {
-        logger.debug("Calling SecurityConfig.userDetailsServiceWrapper()");
-        UserDetailsByNameServiceWrapper<PreAuthenticatedAuthenticationToken> wrapper = new UserDetailsByNameServiceWrapper<PreAuthenticatedAuthenticationToken>();
-        wrapper.setUserDetailsService(userDetailsService());
-        return wrapper;
-    }*/
-
     @Bean
     public UserDetailsService userDetailsService() {
          logger.debug("Calling SecurityConfig.userDetailsService()");
         return new UserDetailsService() {
             Logger logger = LoggerFactory.getLogger(UserDetailsService.class);
 
-            //!!!这个目前看来是关于hasRole的非常关键的一个重写的方法，有了这个方法，spring就会知道当前这个用户的信息了
+            //这个是关于hasRole的非常关键的一个重写的方法，有了这个方法，spring就会知道当前这个用户的信息了
+            //username就是通过表单提交的，这个make sense
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-                //TODO: 这个adapter是套用rxspend里面的一套authentication方法，环境比较复杂，暂时先看再下面最基本的auth
-//                UserDetailsAdapter ud = new UserDetailsAdapter(PrincipalUtil.getPrincipal());
-//                logger.debug("UserDetailsService.loadUserByUsername returning " + ud.getUsername());
-//                System.out.println("UserDetailsService.loadUserByUsername returning " + ud.getUsername());
-//                return ud;
                 Collection<GrantedAuthority> auths = new ArrayList<>();
 
                 SimpleGrantedAuthority auth2 = new SimpleGrantedAuthority("ROLE_ADMIN");
