@@ -14,7 +14,12 @@ import javax.servlet.ServletRegistration;
 /**
  * Created by Wentao Qian on 12/22/2017.
  */
-//this is one way to replace web.xml
+/*
+this is one way to replace web.xml
+TODO: another way is to extend AbstractAnnotationConfigDispatcherServletInitializer class --- can't say it's easier
+http://www.java-allandsundry.com/2013/07/abstractannotationconfigdispatcherservl.html
+Refer to this website for more information of how to use this abstract class
+ */
 public class AppInitializer implements WebApplicationInitializer {
 
     Logger logger = LoggerFactory.getLogger(AppInitializer.class);
