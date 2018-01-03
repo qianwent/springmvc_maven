@@ -21,6 +21,10 @@ public class AppInitializer implements WebApplicationInitializer {
     private static final String CONFIG_LOCATION = "com.qwt.springmaven.config";
     private static final String MAPPING_URL = "/test/*";
 
+    /*
+    看到这个类里面的AnnotationConfigWebApplicationContext和ContextLoaderListener和DispatcherServlet
+    就知道这是用来取代web.xml的
+     */
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         logger.debug("entering AppInitializer.onStartup()");
