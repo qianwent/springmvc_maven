@@ -14,6 +14,7 @@ import javax.servlet.ServletRegistration;
 /**
  * Created by Wentao Qian on 12/22/2017.
  */
+//this is one way to replace web.xml
 public class AppInitializer implements WebApplicationInitializer {
 
     Logger logger = LoggerFactory.getLogger(AppInitializer.class);
