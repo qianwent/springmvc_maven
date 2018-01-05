@@ -37,6 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 // just to make sure the filters are in order, but before which one, looks like in low priority
                 //.addFilterBefore(principalFilter(), UsernamePasswordAuthenticationFilter.class)
+                //以下这些配置都是在APP启动的时候就设定了，以后不管什么http request进来，都不会再触发这个方法
+                //这应该是显而易见的，不然怎么叫configure呢？
                 .addFilterBefore(principalFilter(), LogoutFilter.class)
                 .addFilterAfter(securityContextInitFilter(), PrincipalFilter.class)
                 .authorizeRequests()
