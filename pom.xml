@@ -112,6 +112,7 @@
         </dependency>
 
         <!--jackson will be automatically used by spring mvc for object mapping after we import these dependencies-->
+        <!--https://www.cnblogs.com/fangjian0423/p/springMVC-xml-json-convert.html-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
