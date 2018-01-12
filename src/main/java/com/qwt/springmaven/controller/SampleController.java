@@ -1,10 +1,12 @@
 package com.qwt.springmaven.controller;
 
 import com.qwt.springmaven.model.User;
+import com.qwt.springmaven.service.IService;
 import com.qwt.springmaven.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,11 +20,11 @@ import java.util.Map;
 @Controller
 public class SampleController {
 
-    private SampleService sampleService;
+    private IService iService;
 
     @Autowired
-    public SampleController(SampleService sampleService) {
-        this.sampleService = sampleService;
+    public SampleController(IService iService) {
+        this.iService = iService;
     }
 
     @RequestMapping(value = "/content", method = RequestMethod.GET)
@@ -37,11 +39,11 @@ public class SampleController {
         return "index";//this finally map to index.jsp
     }
 
-    @RequestMapping(value = "/map", method = RequestMethod.GET)
+    @RequestMapping(value = "/map/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, User> showMap() {
+    public Map<String, User> showMap(@PathVariable("id") int id) {
         Map<String, User> map = new HashMap<>();
-        map.put("list", sampleService.getUser());
+        map.put("list", iService.getUser(id));
         return map;
     }
 
