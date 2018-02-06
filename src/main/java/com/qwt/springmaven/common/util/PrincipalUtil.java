@@ -14,7 +14,8 @@ import com.qwt.springmaven.common.model.Principal;
  *
  */
 public class PrincipalUtil {
-	/** thread-local used to store princpal. */
+	/** thread-local used to store principal. 因为这个方法是static，所以自然在调用这个类的时候，会执行new
+	 * 创建出属于当前线程的ThreadLocal对象*/
 	private static ThreadLocal<Principal> principal = new ThreadLocal<Principal>(){
 			@Override
 			protected Principal initialValue(){
