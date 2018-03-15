@@ -24,6 +24,7 @@ public class CustomAnnotationTest {
     @Autowired
     MyService myService;
 
+    //TODO: for now AOP is not working in unit test, something more needs to be set up
     @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void test() {
