@@ -82,7 +82,7 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.6.11</version>
+            <version>1.8.6</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
         <dependency>

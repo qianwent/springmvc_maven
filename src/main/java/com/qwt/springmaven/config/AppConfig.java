@@ -1,8 +1,8 @@
 package com.qwt.springmaven.config;
 
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * Created by Wentao Qian on 12/22/2017.
@@ -12,5 +12,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan(basePackages = "com.qwt.springmaven")
+@EnableAspectJAutoProxy//TODO: this is so important to make aspectj working. But is it the good place to put this annotation?
 public class AppConfig {
 }

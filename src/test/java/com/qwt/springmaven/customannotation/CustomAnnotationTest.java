@@ -24,8 +24,7 @@ public class CustomAnnotationTest {
     @Autowired
     MyService myService;
 
-    //TODO: for now AOP is not working in unit test, something more needs to be set up
-    @Ignore
+    //to make AOP working, we need to use @EnableAspectJAutoProxy in config class, it's very important!
     @Test(expected = IllegalArgumentException.class)
     public void test() {
         String caller = null;
