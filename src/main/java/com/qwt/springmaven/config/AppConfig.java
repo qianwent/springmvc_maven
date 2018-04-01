@@ -12,6 +12,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @Configuration
 @ComponentScan(basePackages = "com.qwt.springmaven")
+//TODO: need to clean up this project, pom, comments...
 @EnableAspectJAutoProxy//TODO: this is so important to make aspectj working. But is it the good place to put this annotation?
 public class AppConfig {
 }
