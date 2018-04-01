@@ -1,0 +1,15 @@
+@Inject是javax里面的，一般情况下可以和@Autowired互换
+如果用@Inject的时候，需要注意一点，实战的时候碰到的问题，虽然很小，就是在import的时候，inject可能有多个package可选
+如果选错，那就无法注入了。。。
+
+TODO
+写custom的annotation
+http://www.baeldung.com/spring-annotation-bean-pre-processor
+search custom spring annotation for more info
+
+https://moelholm.com/2016/10/15/spring-4-3-custom-annotations/
+这个列子的最主要的custom annotation已经实现了，unit test也通过了。
+
+关于引入一些jar包的时候，可能出现ClassNotFound异常，
+需要到project structure里面把相关的包从Available Elements里面加入到output root里面，
+目前还不确定是否是和spring mvc或者Tomcat在intellij里面运行相关，以前用spring boot肯定是没有这个问题的，因为不涉及Tomcat配置
