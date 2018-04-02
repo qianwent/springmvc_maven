@@ -12,4 +12,5 @@ https://moelholm.com/2016/10/15/spring-4-3-custom-annotations/
 
 关于引入一些jar包的时候，可能出现ClassNotFound异常，
 需要到project structure里面把相关的包从Available Elements里面加入到output root里面，
-目前还不确定是否是和spring mvc或者Tomcat在intellij里面运行相关，以前用spring boot肯定是没有这个问题的，因为不涉及Tomcat配置
+目前看来应该是和build war文件相关，新加的jar包不一定被intellij自动加入到lib文件夹下
+具体参考有道云笔记的 intellij FileNotFoundException
