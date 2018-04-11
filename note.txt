@@ -10,6 +10,8 @@ search custom spring annotation for more info
 https://moelholm.com/2016/10/15/spring-4-3-custom-annotations/
 这个列子的最主要的custom annotation已经实现了，unit test也通过了。
 
+自定义的annotation，是基于spring context的。spring是否已经算是标准？还有其它的吗？
+
 关于引入一些jar包的时候，可能出现ClassNotFound异常，
 需要到project structure里面把相关的包从Available Elements里面加入到output root里面，
 目前看来应该是和build war文件相关，新加的jar包不一定被intellij自动加入到lib文件夹下
