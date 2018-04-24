@@ -5,6 +5,8 @@
 TODO
 需要再回顾一下AOP，JDK dynamic proxy和CGLIB的不同和原理又开始遗忘了
 
+看一下Mockito的内部实现，代理
+
 写custom的annotation
 http://www.baeldung.com/spring-annotation-bean-pre-processor
 search custom spring annotation for more info
