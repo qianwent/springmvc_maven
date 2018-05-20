@@ -4,6 +4,9 @@
 
 TODO
 需要再回顾一下AOP，JDK dynamic proxy和CGLIB的不同和原理又开始遗忘了
+https://www.zhihu.com/question/20794107
+这里面也提到了为什么会有静态代理，动态代理等
+自己总结的代码在LeetCode项目下，可供回顾
 
 看一下Mockito的内部实现，代理
 
