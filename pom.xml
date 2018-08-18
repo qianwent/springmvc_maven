@@ -34,6 +34,17 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8060</port>
+                    <path>/</path>
+                    <!--https://stackoverflow.com/questions/1174363/mvn-tomcatrun-doesnt-start-tomcat-->
+                    <ignorePackaging>true</ignorePackaging>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
