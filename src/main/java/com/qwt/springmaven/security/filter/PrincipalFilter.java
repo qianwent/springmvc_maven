@@ -20,7 +20,7 @@ import java.util.List;
  * @author Wentao
  *
  */
-public class PrincipalFilter implements Filter {
+public class PrincipalFilter implements Filter {//TODO: such filter could be included in fw
 	
 	Logger logger = LoggerFactory.getLogger(PrincipalFilter.class);
 
